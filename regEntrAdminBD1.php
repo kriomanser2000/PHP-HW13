@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     $surname = $_POST['surname'];
     $country = $_POST['country'];
     $city = $_POST['city'];
-    $db = new PDO('mysql:host=localhost;dbname=phpStormProj', 'root', '');
+    $db = new PDO('mysql:host=localhost;dbname=EntranceWebDb1', 'root', '');
     $stmt = $db->prepare("SELECT * FROM User WHERE login = :login");
     $stmt->execute([':login' => $login]);
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -38,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Sign In</title>
 </head>
 <body>
 <form method="POST" action="regEntrAdminBD1.php" id="registerForm">
